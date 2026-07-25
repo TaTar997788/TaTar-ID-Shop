@@ -1,116 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ร้านขายไอดี eFootball</title>
+    <title>eFootball Shop</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: white;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
             margin: 0;
-            padding: 15px;
+            padding: 10px;
+        }
+
+        /* ส่วนหัว: โปรไฟล์และแบนเนอร์ */
+        .header-container {
+            display: flex;
+            gap: 8px;
+            max-width: 500px;
+            margin: 0 auto 10px auto;
+        }
+
+        .profile-box {
+            display: flex;
+            gap: 6px;
+            flex: 1.2;
+        }
+
+        .fb-card {
+            background: #ffb6c1;
+            border-radius: 12px;
+            padding: 6px 2px;
             text-align: center;
+            text-decoration: none;
+            color: #000;
+            flex: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        h2 {
-            color: #2dd4bf;
-            font-size: 22px;
-            margin-bottom: 20px;
+        .fb-icon {
+            font-size: 10px;
+            font-weight: bold;
+            background: #ff1493;
+            color: white;
+            border-radius: 20px;
+            padding: 1px 5px;
+            display: inline-block;
+            margin-bottom: 3px;
         }
 
-        .grid-container {
+        .fb-card img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .fb-name {
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .banner-box {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .banner-item img {
+            width: 100%;
+            height: 38px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .notice-bar {
+            background: #ffb6c1;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 12px;
+            max-width: 484px;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* ตารางสินค้า */
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
             max-width: 500px;
             margin: 0 auto;
         }
 
         .card {
-            background-color: #1e293b;
-            border-radius: 12px;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+            display: block;
         }
 
         .card img {
             width: 100%;
-            aspect-ratio: 3/4;
+            aspect-ratio: 1/1;
             object-fit: cover;
-            border-radius: 8px;
+            display: block;
         }
 
         .price {
-            color: #facc15;
-            font-size: 16px;
+            color: #ffd700;
             font-weight: bold;
-            margin: 8px 0 2px 0;
+            font-size: 13px;
+            padding: 4px 0 2px 0;
         }
 
         .name {
-            color: #94a3b8;
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            background-color: #f43f5e;
-            color: white;
-            text-decoration: none;
-            padding: 8px 0;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            box-sizing: border-box;
+            color: #cccccc;
+            font-size: 11px;
+            padding-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 4px;
+            padding-right: 4px;
         }
     </style>
 </head>
 <body>
 
-    <h2>รายการไอดี eFootball พร้อมส่ง</h2>
-
-    <div class="grid-container">
-
-        <!-- สินค้าที่ 1: Ferran Torres -->
-        <div class="card">
-            <img src="https://i.ibb.co/m5tLJGMV/Ferran-Torres-efhub.png" alt="Ferran Torres">
-            <div class="price">20 บาท</div>
-            <div class="name">Ferran Torres</div>
-            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
+    <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
+    <div class="header-container">
+        <!-- เฟซหลัก (ใส่ลิงก์เฟสและรูปของคุณแล้ว) -->
+        <div class="profile-box">
+            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
+                <div class="fb-icon">หลัก</div>
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Profile">
+                <div class="fb-name">Mook Mook</div>
+            </a>
+            <!-- เฟซรอง -->
+            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
+                <div class="fb-icon">รอง</div>
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Profile">
+                <div class="fb-name">Meena meena</div>
+            </a>
         </div>
 
-        <!-- สินค้าที่ 2: Rodri -->
-        <div class="card">
-            <img src="https://i.ibb.co/sdpdzDBR/Rodri-efhub.png" alt="Rodri">
-            <div class="price">50 บาท</div>
-            <div class="name">Rodri</div>
-            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
+        <!-- แบนเนอร์ขวา -->
+        <div class="banner-box">
+            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่เดี่ยว">
+            </a>
+            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่คู่">
+            </a>
         </div>
+    </div>
 
-        <!-- สินค้าที่ 3: Marc Cucurella -->
-        <div class="card">
-            <img src="https://i.ibb.co/1tp0QMyz/Marc-Cucurella-efhub.png" alt="Marc Cucurella">
-            <div class="price">40 บาท</div>
-            <div class="name">Marc Cucurella</div>
-            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
-        </div>
+    <!-- ข้อความแจ้งเตือน -->
+    <div class="notice-bar">ติดต่อสอบถามกดที่รูปได้เลย!</div>
 
-        <!-- สินค้าที่ 4: Erling Haaland -->
-        <div class="card">
-            <img src="https://i.ibb.co/bgWNfN6W/Erling-Haaland-efhub.png" alt="Erling Haaland">
-            <div class="price">50 บาท</div>
-            <div class="name">Erling Haaland</div>
-            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
-        </div>
+    <!-- รายการสินค้า (กดที่รูปเพื่อทักซื้อ) -->
+    <div class="product-grid">
+
+        <!-- สินค้าชิ้นที่ 1 -->
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
+            <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Messi">
+            <div class="price">200 บาท</div>
+            <div class="name">Messi</div>
+        </a>
+
+        <!-- สินค้าชิ้นที่ 2 -->
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
+            <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Hazard">
+            <div class="price">150 บาท</div>
+            <div class="name">Hazard</div>
+        </a>
+
+        <!-- สินค้าชิ้นที่ 3 -->
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
+            <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Vieira">
+            <div class="price">150 บาท</div>
+            <div class="name">Vieira</div>
+        </a>
 
     </div>
 
