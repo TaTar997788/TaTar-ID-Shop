@@ -3,206 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eFootball Shop</title>
+    <title>False Nine Shop - eFootball</title>
     <style>
         body {
-            background-color: #121212;
+            background-color: #0b0f19;
             color: #ffffff;
             font-family: sans-serif;
             margin: 0;
             padding: 10px;
+            padding-bottom: 70px;
         }
 
-        /* ส่วนหัว: โปรไฟล์และแบนเนอร์ */
-        .header-container {
+        /* ส่วนหัวร้านค้า */
+        .shop-header {
             display: flex;
-            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
             max-width: 500px;
-            margin: 0 auto 10px auto;
-        }
-
-        .profile-box {
-            display: flex;
-            flex: 1.2;
-        }
-
-        .fb-card {
-            background: #1e1e1e; /* เปลี่ยนเป็นสีดำ */
-            border: 1px solid #ffd700; /* เพิ่มขอบสีทอง */
-            border-radius: 12px;
-            padding: 6px 2px;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        .fb-icon {
-            font-size: 10px;
-            font-weight: bold;
-            background: #ffd700; /* ป้ายคำว่าหลักเปลี่ยนเป็นสีทอง */
-            color: #000;
-            border-radius: 20px;
-            padding: 1px 5px;
-            display: inline-block;
-            margin-bottom: 3px;
-        }
-
-        .fb-card img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ffd700;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .fb-name {
-            font-size: 10px;
-            font-weight: bold;
-            margin-top: 3px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #ffffff;
-        }
-
-        .banner-box {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            flex: 1;
-        }
-
-        .banner-item img {
-            width: 100%;
-            height: 38px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #ffd700;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            display: block;
-        }
-
-        .notice-bar {
-            background: #1e1e1e; /* แถบแจ้งเตือนเป็นสีดำ */
-            color: #ffd700; /* ตัวหนังสือสีทอง */
-            border: 1px solid #ffd700; /* ขอบสีทอง */
-            text-align: center;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 8px;
-            border-radius: 12px;
-            max-width: 484px;
             margin: 0 auto 15px auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            padding: 5px 0;
         }
 
-        /* ตารางสินค้า */
-        .product-grid {
+        .shop-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .shop-logo {
+            width: 35px;
+            height: 35px;
+            background: #ffd700;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .shop-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .shop-name span {
+            color: #ffd700;
+            display: block;
+            font-size: 12px;
+        }
+
+        .login-btn {
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* กล่องสถิติ 3 ช่อง */
+        .stats-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             max-width: 500px;
+            margin: 0 auto 15px auto;
+        }
+
+        .stat-card {
+            background: #141b2d;
+            border: 1px solid #1f293d;
+            border-radius: 12px;
+            padding: 10px 5px;
+            text-align: center;
+        }
+
+        .stat-card .icon {
+            font-size: 16px;
+            color: #ffd700;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 10px;
+            color: #9ca3af;
+            margin-bottom: 2px;
+        }
+
+        .stat-card .value {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* หัวข้อสินค้าและตัวกรอง */
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 auto 8px auto;
+            max-width: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 6px;
+            max-width: 500px;
+            margin: 0 auto 12px auto;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .filter-tag {
+            background: #141b2d;
+            border: 1px solid #1f293d;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .filter-tag.active {
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border-color: #ffd700;
+        }
+
+        /* รายการสินค้าสไตล์การ์ดนอนยาว */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .card {
-            background: #1e1e1e;
-            border-radius: 8px;
+        .product-card {
+            background: #141b2d;
+            border: 1px solid #1f293d;
+            border-radius: 12px;
+            display: flex;
             overflow: hidden;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             text-decoration: none;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* ป้ายลดราคาเฉียงมุมขวาบน */
+        .discount-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
             color: white;
-            display: block;
-        }
-
-        .card img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            display: block;
-        }
-
-        .price {
-            color: #ffd700;
+            font-size: 9px;
             font-weight: bold;
-            font-size: 13px;
-            padding: 4px 0 2px 0;
+            padding: 2px 15px;
+            border-bottom-left-radius: 10px;
         }
 
-        .name {
-            color: #cccccc;
-            font-size: 11px;
-            padding-bottom: 6px;
+        .product-img-box {
+            width: 110px;
+            height: 110px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 8px 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 35px; /*เว้นที่ให้ป้ายลดราคา*/
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            padding-left: 4px;
-            padding-right: 4px;
+        }
+
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin: 2px 0;
+        }
+
+        .old-price {
+            font-size: 11px;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+
+        .new-price {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .tags-row {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+
+        .mini-tag {
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 9px;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        .stock-status {
+            font-size: 10px;
+            color: #9ca3af;
+        }
+
+        .buy-btn-box {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .buy-btn {
+            background: #ffd700;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        /* แถบเมนูด้านล่าง (Bottom Navigation) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #141b2d;
+            border-top: 1px solid #1f293d;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav-item.active {
+            color: #ffd700;
+        }
+
+        .nav-icon {
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
-    <div class="header-container">
-        <!-- เฟซหลัก -->
-        <div class="profile-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
-                <div class="fb-icon">หลัก</div>
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Profile">
-                <div class="fb-name">ตา คนเก่า</div>
-            </a>
+    <!-- ส่วนหัวร้าน -->
+    <div class="shop-header">
+        <div class="shop-title-box">
+            <div class="shop-logo">FN</div>
+            <div class="shop-name">
+                False Nine <span>Shop</span>
+            </div>
         </div>
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="login-btn">เข้าสู่ระบบ</a>
+    </div>
 
-        <!-- แบนเนอร์ขวา -->
-        <div class="banner-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่เดี่ยว">
-            </a>
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่คู่">
-            </a>
+    <!-- กล่องสถิติ -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="label">สมาชิก</div>
+            <div class="value">7,833</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">สินค้าที่ขายแล้ว</div>
+            <div class="value">7,965</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">คะแนนเฉลี่ย</div>
+            <div class="value">4.7 ⭐</div>
         </div>
     </div>
 
-    <!-- ข้อความแจ้งเตือน -->
-    <div class="notice-bar">ติดต่อสอบถามกดที่รูปได้เลย!</div>
+    <!-- หัวข้อและหมวดหมู่ -->
+    <div class="section-title">
+        <span>🛒 สินค้าทั้งหมด</span>
+        <span style="font-size: 11px; color: #9ca3af;">1-10 / 340 รายการ</span>
+    </div>
 
-    <!-- รายการสินค้า -->
-    <div class="product-grid">
+    <div class="filter-container">
+        <a href="#" class="filter-tag active">eFootball</a>
+        <a href="#" class="filter-tag">เดี่ยว</a>
+        <a href="#" class="filter-tag">คู่</a>
+        <a href="#" class="filter-tag">ไอดีไก่มีโค้ช</a>
+    </div>
 
-        <!-- สินค้าชิ้นที่ 1 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
-            <img src="https://i.ibb.co/bgWNfN6W/Erling-Haaland-efhub.png" alt="Hazard">
-            <div class="price">200 บาท</div>
-            <div class="name">Messi</div>
+    <!-- รายการสินค้า (กดที่การ์ดเพื่อทักแชทซื้อ) -->
+    <div class="product-list">
+
+        <!-- สินค้าชิ้นที่ 1: Haaland -->
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
+            <div class="discount-badge">-10%</div>
+            <div class="product-img-box">
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Haaland">
+            </div>
+            <div class="product-info">
+                <div>
+                    <div class="product-name">Erling Haaland</div>
+                    <div class="price-box">
+                        <span class="old-price">50</span>
+                        <span class="new-price">45 coin</span>
+                    </div>
+                    <div class="tags-row">
+                        <span class="mini-tag">เดี่ยว</span>
+                        <span class="mini-tag">⚡ 10%</span>
+                        <span class="mini-tag">✨ มาใหม่</span>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                    <span class="stock-status">คงเหลือ: 3</span>
+                    <div class="buy-btn">+ ใส่ตะกร้า</div>
+                </div>
+            </div>
         </a>
 
-        <!-- สินค้าชิ้นที่ 2 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
-            <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Hazard">
-            <div class="price">150 บาท</div>
-            <div class="name">Hazard</div>
+        <!-- สินค้าชิ้นที่ 2: Harry Kane -->
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
+            <div class="discount-badge">-10%</div>
+            <div class="product-img-box">
+                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Harry Kane">
+            </div>
+            <div class="product-info">
+                <div>
+                    <div class="product-name">Harry Kane</div>
+                    <div class="price-box">
+                        <span class="old-price">50</span>
+                        <span class="new-price">45 coin</span>
+                    </div>
+                    <div class="tags-row">
+                        <span class="mini-tag">เดี่ยว</span>
+                        <span class="mini-tag">⚡ 10%</span>
+                        <span class="mini-tag">✨ มาใหม่</span>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                    <span class="stock-status">คงเหลือ: 1</span>
+                    <div class="buy-btn">+ ใส่ตะกร้า</div>
+                </div>
+            </div>
         </a>
 
-        <!-- สินค้าชิ้นที่ 3 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
-            <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Vieira">
-            <div class="price">150 บาท</div>
-            <div class="name">Vieira</div>
-        </a>
-        <!-- สินค้าชิ้นใหม่ -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="card">
-            <img src="https://i.ibb.co/bgWNfN6W/Erling-Haaland-efhub.png" alt="ชื่อนักเตะ">
-            <div class="price">ราคา บาท</div>
-            <div class="name">ชื่อนักเตะ</div>
-        </a>
+    </div>
 
+    <!-- แถบเมนูด้านล่าง -->
+    <div class="bottom-nav">
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>หน้าแรก</span>
+        </a>
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="nav-item">
+            <span class="nav-icon">🛒</span>
+            <span>ตะกร้า</span>
+        </a>
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="nav-item">
+            <span class="nav-icon">📦</span>
+            <span>สินค้า</span>
+        </a>
+        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>บัญชี</span>
+        </a>
     </div>
 
 </body>
