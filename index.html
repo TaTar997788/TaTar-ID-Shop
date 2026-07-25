@@ -27,12 +27,13 @@
         }
 
         .fb-card {
-            background: #ffb6c1;
+            background: #1e1e1e; /* เปลี่ยนเป็นสีดำ */
+            border: 1px solid #ffd700; /* เพิ่มขอบสีทอง */
             border-radius: 12px;
             padding: 6px 2px;
             text-align: center;
             text-decoration: none;
-            color: #000;
+            color: #ffffff;
             width: 100%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
@@ -40,8 +41,8 @@
         .fb-icon {
             font-size: 10px;
             font-weight: bold;
-            background: #ff1493;
-            color: white;
+            background: #ffd700; /* ป้ายคำว่าหลักเปลี่ยนเป็นสีทอง */
+            color: #000;
             border-radius: 20px;
             padding: 1px 5px;
             display: inline-block;
@@ -53,7 +54,7 @@
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid white;
+            border: 2px solid #ffd700;
             display: block;
             margin: 0 auto;
         }
@@ -65,6 +66,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #ffffff;
         }
 
         .banner-box {
@@ -79,13 +81,15 @@
             height: 38px;
             object-fit: cover;
             border-radius: 8px;
+            border: 1px solid #ffd700;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             display: block;
         }
 
         .notice-bar {
-            background: #ffb6c1;
-            color: #000;
+            background: #1e1e1e; /* แถบแจ้งเตือนเป็นสีดำ */
+            color: #ffd700; /* ตัวหนังสือสีทอง */
+            border: 1px solid #ffd700; /* ขอบสีทอง */
             text-align: center;
             font-weight: bold;
             font-size: 13px;
@@ -146,7 +150,7 @@
 
     <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
     <div class="header-container">
-        <!-- เฟซหลัก (เหลือช่องเดียว) -->
+        <!-- เฟซหลัก -->
         <div class="profile-box">
             <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
                 <div class="fb-icon">หลัก</div>
