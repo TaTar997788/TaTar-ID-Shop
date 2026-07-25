@@ -27,9 +27,9 @@
             flex: 1.2;
         }
 
-        /* ใส่รูปปกเป็นพื้นหลังของกรอบซ้าย */
+        /* ปรับพื้นหลังให้สว่างขึ้น (ลดความมืดของเงาทับลง) */
         .fb-card {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/RTtx4yh0/1785019351874.png');
+            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('https://i.ibb.co/RTtx4yh0/1785019351874.png');
             background-size: cover;
             background-position: center;
             border: 1px solid #ffd700;
@@ -57,12 +57,13 @@
             margin-bottom: 3px;
         }
 
+        /* ลดความเด่นของวงกลมสีเหลือง (ลดขนาดเส้นขอบลงจาก 2px เป็น 1px) */
         .fb-card img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #ffd700;
+            border: 1px solid #ffd700;
             display: block;
             margin: 0 auto;
         }
@@ -217,7 +218,7 @@
 
     <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
     <div class="header-container">
-        <!-- เฟซหลัก (ใช้รูปปกเป็นพื้นหลังกรอบซ้าย) -->
+        <!-- เฟซหลัก -->
         <div class="profile-box">
             <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
                 <div class="fb-icon">หลัก</div>
