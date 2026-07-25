@@ -27,8 +27,11 @@
             flex: 1.2;
         }
 
+        /* ใส่รูปปกเป็นพื้นหลังของกรอบซ้าย */
         .fb-card {
-            background: #1e1e1e;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/RTtx4yh0/1785019351874.png');
+            background-size: cover;
+            background-position: center;
             border: 1px solid #ffd700;
             border-radius: 12px;
             padding: 6px 2px;
@@ -72,6 +75,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             color: #ffffff;
+            text-shadow: 1px 1px 2px #000;
         }
 
         .banner-box {
@@ -213,7 +217,7 @@
 
     <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
     <div class="header-container">
-        <!-- เฟซหลัก (ใช้รูปเดียวกับแบนเนอร์ด้านขวา) -->
+        <!-- เฟซหลัก (ใช้รูปปกเป็นพื้นหลังกรอบซ้าย) -->
         <div class="profile-box">
             <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
                 <div class="fb-icon">หลัก</div>
