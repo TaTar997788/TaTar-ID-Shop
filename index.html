@@ -22,16 +22,16 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            max-width: 600px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .card {
             background-color: #1e293b;
-            border-radius: 10px;
-            padding: 8px;
+            border-radius: 12px;
+            padding: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             border: 1px solid #334155;
             display: flex;
@@ -43,19 +43,19 @@
             width: 100%;
             aspect-ratio: 3/4;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
         .price {
             color: #facc15;
             font-size: 16px;
             font-weight: bold;
-            margin: 6px 0 2px 0;
+            margin: 8px 0 2px 0;
         }
 
         .name {
             color: #94a3b8;
-            font-size: 12px;
+            font-size: 13px;
             margin-bottom: 8px;
         }
 
@@ -65,17 +65,11 @@
             background-color: #f43f5e;
             color: white;
             text-decoration: none;
-            padding: 6px 0;
+            padding: 8px 0;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             box-sizing: border-box;
-        }
-
-        @media (max-width: 400px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
@@ -85,52 +79,36 @@
 
     <div class="grid-container">
 
-        <!-- ไอดีที่ 1 -->
+        <!-- สินค้าที่ 1: Ferran Torres -->
         <div class="card">
-            <img src="ใส่_URL_รูปDaniOlmo.jpg" alt="Dani Olmo">
+            <img src="https://i.ibb.co/m5tLJGMV/Ferran-Torres-efhub.png" alt="Ferran Torres">
             <div class="price">150 บาท</div>
-            <div class="name">Dani Olmo</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
+            <div class="name">Ferran Torres</div>
+            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
         </div>
 
-        <!-- ไอดีที่ 2 -->
+        <!-- สินค้าที่ 2: Rodri -->
         <div class="card">
-            <img src="ใส่_URL_รูปHaaland.jpg" alt="Haaland">
-            <div class="price">150 บาท</div>
-            <div class="name">Haaland</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
-        </div>
-
-        <!-- ไอดีที่ 3 -->
-        <div class="card">
-            <img src="ใส่_URL_รูปHaaland.jpg" alt="Rodri">
+            <img src="https://i.ibb.co/sdpdzDBR/Rodri-efhub.png" alt="Rodri">
             <div class="price">150 บาท</div>
             <div class="name">Rodri</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
+            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
         </div>
 
-        <!-- ไอดีที่ 4 -->
+        <!-- สินค้าที่ 3: Marc Cucurella -->
         <div class="card">
-            <img src="ใส่_URL_รูปDaniOlmo.jpg" alt="นักเตะ 4">
+            <img src="https://i.ibb.co/1tp0QMyz/Marc-Cucurella-efhub.png" alt="Marc Cucurella">
             <div class="price">150 บาท</div>
-            <div class="name">นักเตะ 4</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
+            <div class="name">Marc Cucurella</div>
+            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
         </div>
 
-        <!-- ไอดีที่ 5 -->
+        <!-- สินค้าที่ 4: Erling Haaland -->
         <div class="card">
-            <img src="ใส่_URL_รูปHaaland.jpg" alt="นักเตะ 5">
+            <img src="https://i.ibb.co/bgWNfN6W/Erling-Haaland-efhub.png" alt="Erling Haaland">
             <div class="price">150 บาท</div>
-            <div class="name">นักเตะ 5</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
-        </div>
-
-        <!-- ไอดีที่ 6 -->
-        <div class="card">
-            <img src="ใส่_URL_รูปDaniOlmo.jpg" alt="นักเตะ 6">
-            <div class="price">150 บาท</div>
-            <div class="name">นักเตะ 6</div>
-            <a href="https://m.me/yourfacebook" class="btn">ทักซื้อ</a>
+            <div class="name">Erling Haaland</div>
+            <a href="https://www.facebook.com/share/1ELPiB4Ek6/" target="_blank" class="btn">ทักซื้อ</a>
         </div>
 
     </div>
