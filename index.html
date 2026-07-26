@@ -3,468 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eFootball Shop</title>
+    <title>สุ่มไอดี eFootball</title>
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 10px;
-            padding-bottom: 20px;
-        }
-
-        /* ส่วนหัว: โปรไฟล์และแบนเนอร์ */
-        .header-container {
-            display: flex;
-            gap: 8px;
-            max-width: 500px;
-            margin: 0 auto 10px auto;
-        }
-
-        .profile-box {
-            display: flex;
-            flex: 1.2;
-        }
-
-        /* ปรับพื้นหลังให้สว่างขึ้น (ลดความมืดของเงาทับลง) */
-        .fb-card {
-            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('https://i.ibb.co/RTtx4yh0/1785019351874.png');
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #ffd700;
-            border-radius: 12px;
-            padding: 6px 2px;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fb-icon {
-            font-size: 10px;
-            font-weight: bold;
-            background: #ffd700;
-            color: #000;
-            border-radius: 20px;
-            padding: 1px 5px;
-            display: inline-block;
-            margin-bottom: 3px;
-        }
-
-        /* ลดความเด่นของวงกลมสีเหลือง (ลดขนาดเส้นขอบลงจาก 2px เป็น 1px) */
-        .fb-card img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ffd700;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .fb-name {
-            font-size: 10px;
-            font-weight: bold;
-            margin-top: 3px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #ffffff;
-            text-shadow: 1px 1px 2px #000;
-        }
-
-        .banner-box {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            flex: 1;
-        }
-
-        .banner-item img {
-            width: 100%;
-            height: 38px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #ffd700;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            display: block;
-        }
-
-        .notice-bar {
-            background: #1e1e1e;
-            color: #ffd700;
-            border: 1px solid #ffd700;
-            text-align: center;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 8px;
-            border-radius: 12px;
-            max-width: 484px;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        /* รายการสินค้าแบบการ์ดนอนยาว */
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: #1e1e1e;
-            border: 1px solid #ffd700;
-            border-radius: 12px;
-            display: flex;
-            overflow: hidden;
-            text-decoration: none;
-            color: #fff;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-
-        /* ป้ายลดราคา */
-        .discount-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #ff4d4d, #cc0000);
-            color: white;
-            font-size: 9px;
-            font-weight: bold;
-            padding: 2px 15px;
-            border-bottom-left-radius: 10px;
-        }
-
-        .product-img-box {
-            width: 110px;
-            height: 110px;
-            flex-shrink: 0;
-        }
-
-        .product-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 8px 10px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-name {
-            font-size: 13px;
-            font-weight: bold;
-            color: #fff;
-            margin-right: 35px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .price-box {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-            margin: 2px 0;
-        }
-
-        .old-price {
-            font-size: 11px;
-            color: #9ca3af;
-            text-decoration: line-through;
-        }
-
-        .new-price {
-            font-size: 14px;
-            font-weight: bold;
-            color: #ffd700;
-        }
-
-        .tags-row {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-bottom: 2px;
-        }
-
-        .mini-tag {
-            background: #2a2a2a;
-            color: #b0b0b0;
-            font-size: 9px;
-            padding: 1px 6px;
-            border-radius: 4px;
-        }
-
-        .stock-status {
-            font-size: 10px;
-            color: #9ca3af;
-        }
+        body { background: #121212; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; }
+        .box { background: #1e1e1e; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; border: 1px solid #333; }
+        .credit { background: #2a2a2a; padding: 10px; border-radius: 5px; font-weight: bold; color: #4CAF50; margin-bottom: 15px; }
+        button { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .btn-gacha { background: #2196F3; color: #fff; font-size: 16px; }
+        .btn-gacha:hover { background: #0b7dda; }
+        .btn-back { background: #555; color: #fff; }
+        .btn-back:hover { background: #444; }
+        #result { margin-top: 15px; font-weight: bold; color: #ff9800; }
     </style>
 </head>
 <body>
 
-    <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
-    <div class="header-container">
-        <!-- เฟซหลัก -->
-        <div class="profile-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
-                <div class="fb-icon">หลัก</div>
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Profile">
-                <div class="fb-name">ตา คนเก่า</div>
-            </a>
-        </div>
-
-        <!-- แบนเนอร์ขวา -->
-        <div class="banner-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่เดี่ยว">
-            </a>
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่คู่">
-            </a>
-        </div>
+    <div class="box">
+        <h2>⚽ สุ่มไอดี eFootball</h2>
+        
+        <!-- แสดงเครดิตคงเหลือ -->
+        <div class="credit">เครดิตคงเหลือ: <span id="creditDisplay">100</span> บาท</div>
+        
+        <p>ค่าสุ่มครั้งละ 50 บาท</p>
+        
+        <button class="btn-gacha" onclick="playGacha()">สุ่มไอดีเลย!</button>
+        <button class="btn-back" onclick="location.href='index.html'">กลับหน้าหลัก</button>
+        
+        <div id="result"></div>
     </div>
 
-    <!-- ข้อความแจ้งเตือน -->
-    <div class="notice-bar">ติดต่อสอบถามกดที่รูปหรือตัวสินค้าได้เลย!</div>
+    <script>
+        // กำหนดเครดิตเริ่มต้น 100 บาท (บันทึกไว้ในเครื่อง)
+        if (localStorage.getItem('myCredit') === null) {
+            localStorage.setItem('myCredit', '100');
+        }
 
-    <!-- รายการสินค้า -->
-    <div class="product-list">
+        // แสดงผลเครดิตปัจจุบัน
+        function updateCreditDisplay() {
+            let currentCredit = localStorage.getItem('myCredit');
+            document.getElementById('creditDisplay').innerText = currentCredit;
+        }
+        updateCreditDisplay();
 
-        <!-- สินค้าชิ้นที่ 1 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
-            <div class="discount-badge">-10%</div>
-            <div class="product-img-box">
-                <img src="https://i.ibb.co/bgWNfN6W/Erling-Haaland-efhub.png" alt="Erling Haaland">
-            </div>
-            <div class="product-info">
-                <div>
-                    <div class="product-name">Erling Haaland</div>
-                    <div class="price-box">
-                        <span class="old-price">60</span>
-                        <span class="new-price">50บาท</span>
-                    </div>
-                    <div class="tags-row">
-                        <span class="mini-tag">เดี่ยว</span>
-                        <span class="mini-tag">⚡ 10%</span>
-                        <span class="mini-tag">✨ มาใหม่</span>
-                    </div>
-                </div>
-                <div class="stock-status">คงเหลือ: 3</div>
-            </div>
-        </a>
+        // ฟังก์ชันสุ่มไอดี
+        function playGacha() {
+            let currentCredit = parseInt(localStorage.getItem('myCredit'));
+            let cost = 50; // ค่าสุ่มครั้งละ 50 บาท
 
-        <!-- สินค้าชิ้นที่ 2 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
-            <div class="discount-badge">-10%</div>
-            <div class="product-img-box">
-                <img src="https://i.ibb.co/DHZzx3dJ/Harry-Kane-efhub.png" alt="Harry Kane">
-            </div>
-            <div class="product-info">
-                <div>
-                    <div class="product-name">Harry Kane</div>
-                    <div class="price-box">
-                        <span class="old-price">45</span>
-                        <span class="new-price">35 บาท</span>
-                    </div>
-                    <div class="tags-row">
-                        <span class="mini-tag">เดี่ยว</span>
-                        <span class="mini-tag">⚡ 10%</span>
-                        <span class="mini-tag">✨ มาใหม่</span>
-                    </div>
-                </div>
-                <div class="stock-status">คงเหลือ: 5</div>
-            </div>
-        </a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/Z6JXRfNN/xx.jpg" alt="Rodir">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Rodir</div>
-            <div class="price-box">
-                <span class="old-price">60</span>
-                <span class="new-price">50 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/m5tLJGMV/Ferran-Torres-efhub.png" alt="Rodir">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Frran Torres</div>
-            <div class="price-box">
-                <span class="old-price">30</span>
-                <span class="new-price">20 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/5hm6XttQ/Gerard-Piqu-efhub.png" alt="Gerard Piqué">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Gerard Piqué</div>
-            <div class="price-box">
-                <span class="old-price">40</span>
-                <span class="new-price">30 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/1tp0QMyz/Marc-Cucurella-efhub.png" alt="Marc Cucurella">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Marc Cucurella</div>
-            <div class="price-box">
-                <span class="old-price">30</span>
-                <span class="new-price">20 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ:3</div>
-    </div>
-</a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/BKKPdgvz/B-Schweinsteiger-efhub.png" alt="ชื่อสินค้า">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">B. Schweinsteiger</div>
-            <div class="price-box">
-                <span class="old-price">40</span>
-                <span class="new-price">30 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
-<a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/G4tKyZSg/Dani-Olmo-efhub.png" alt="ชื่อสินค้า">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Dani Olmo</div>
-            <div class="price-box">
-                <span class="old-price">30</span>
-                <span class="new-price">20 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
-     <a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/3yxM2t0B/Cristian-Romero-efhub.png" alt="ชื่อสินค้า">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Cristian Romero</div>
-            <div class="price-box">
-                <span class="old-price">25</span>
-                <span class="new-price">15 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 10</div>
-    </div>
-</a>
-   <a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-    <div class="discount-badge">-10%</div>
-    <div class="product-img-box">
-        <img src="https://i.ibb.co/v4kzdvRr/Lilian-Thuram-efhub.png" alt="ชื่อสินค้า">
-    </div>
-    <div class="product-info">
-        <div>
-            <div class="product-name">Lilian Thuram</div>
-            <div class="price-box">
-                <span class="old-price">40</span>
-                <span class="new-price">30 บาท</span>
-            </div>
-            <div class="tags-row">
-                <span class="mini-tag">เดี่ยว</span>
-                <span class="mini-tag">⚡ 10%</span>
-                <span class="mini-tag">✨ มาใหม่</span>
-            </div>
-        </div>
-        <div class="stock-status">คงเหลือ: 1</div>
-    </div>
-</a>
+            if (currentCredit < cost) {
+                document.getElementById('result').style.color = "red";
+                document.getElementById('result').innerText = "❌ เครดิตไม่พอ กรุณาเติมเงินก่อน!";
+                return;
+            }
 
-    </div>
+            // หักเงิน
+            currentCredit -= cost;
+            localStorage.setItem('myCredit', currentCredit);
+            updateCreditDisplay();
 
-    <!-- เมนูลัดไปหน้าเติมเงินและสุ่มไอดี -->
-<div style="text-align: center; margin: 15px 0;">
-    <a href="topup.html" style="background: #ff9800; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">💳 เติมเงิน</a>
-    <a href="gacha.html" style="background: #2196F3; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">🎲 สุ่มไอดี</a>
-</div>
-    
+            // รายชื่อไอดีจำลองที่จะสุ่มได้
+            let items = [
+                "🎉 ยินดีด้วย! คุณได้ไอดี: Messi 105 (Epic)",
+                "🎉 ยินดีด้วย! คุณได้ไอดี: Neymar 104 (Show Time)",
+                "🎉 ยินดีด้วย! คุณได้ไอดี: Maradona 103 (Legend)",
+                "😢 เสียใจด้วย ได้เกลือ (ลองใหม่อีกครั้ง!)",
+                "😢 เสียใจด้วย ได้ตัวธรรมดา"
+            ];
+
+            let randomItem = items[Math.floor(Math.random() * items.length)];
+            
+            document.getElementById('result').style.color = "#ff9800";
+            document.getElementById('result').innerText = randomItem;
+        }
+    </script>
+
 </body>
 </html>
