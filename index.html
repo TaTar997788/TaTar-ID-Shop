@@ -3,316 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eFootball Shop</title>
+    <title>TaTar-ID-Shop</title>
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 10px;
-            padding-bottom: 20px;
-        }
-
-        /* ส่วนหัว: โปรไฟล์และแบนเนอร์ */
-        .header-container {
-            display: flex;
-            gap: 8px;
-            max-width: 500px;
-            margin: 0 auto 10px auto;
-        }
-
-        .profile-box {
-            display: flex;
-            flex: 1.2;
-        }
-
-        .fb-card {
-            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('https://i.ibb.co/RTtx4yh0/1785019351874.png');
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #ffd700;
-            border-radius: 12px;
-            padding: 6px 2px;
+        body { 
+            background: #121212; 
+            color: #fff; 
+            font-family: sans-serif; 
+            margin: 0; 
+            padding: 15px; 
             text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .notice {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            color: #ffc107;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .item-card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            padding: 10px;
+            margin-bottom: 12px;
+            position: relative;
+            text-align: left;
         }
-
-        .fb-icon {
-            font-size: 10px;
-            font-weight: bold;
-            background: #ffd700;
-            color: #000;
-            border-radius: 20px;
-            padding: 1px 5px;
-            display: inline-block;
-            margin-bottom: 3px;
-        }
-
-        .fb-card img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ffd700;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .fb-name {
-            font-size: 10px;
-            font-weight: bold;
-            margin-top: 3px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #ffffff;
-            text-shadow: 1px 1px 2px #000;
-        }
-
-        .banner-box {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            flex: 1;
-        }
-
-        .banner-item img {
-            width: 100%;
-            height: 38px;
+        .item-img {
+            width: 90px;
+            height: 90px;
             object-fit: cover;
             border-radius: 8px;
-            border: 1px solid #ffd700;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            display: block;
+            margin-right: 12px;
+            background: #333;
         }
-
-        .notice-bar {
-            background: #1e1e1e;
-            color: #ffd700;
-            border: 1px solid #ffd700;
-            text-align: center;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 8px;
-            border-radius: 12px;
-            max-width: 484px;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        .item-info {
+            flex-grow: 1;
         }
-
-        /* รายการสินค้าแบบการ์ดนอนยาว */
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: #1e1e1e;
-            border: 1px solid #ffd700;
-            border-radius: 12px;
-            display: flex;
-            overflow: hidden;
-            text-decoration: none;
-            color: #fff;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-
-        /* ป้ายลดราคา */
-        .discount-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #ff4d4d, #cc0000);
-            color: white;
-            font-size: 9px;
-            font-weight: bold;
-            padding: 2px 15px;
-            border-bottom-left-radius: 10px;
-        }
-
-        .product-img-box {
-            width: 110px;
-            height: 110px;
-            flex-shrink: 0;
-        }
-
-        .product-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 8px 10px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-name {
-            font-size: 13px;
+        .item-name {
+            font-size: 16px;
             font-weight: bold;
             color: #fff;
-            margin-right: 35px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            margin-bottom: 5px;
         }
-
-        .price-box {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-            margin: 2px 0;
+        .item-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffc107;
         }
-
         .old-price {
-            font-size: 11px;
-            color: #9ca3af;
             text-decoration: line-through;
+            color: #888;
+            font-size: 13px;
+            margin-right: 5px;
         }
-
-        .new-price {
-            font-size: 14px;
-            font-weight: bold;
-            color: #ffd700;
+        .item-stock {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
         }
-
-        .tags-row {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-bottom: 2px;
-        }
-
-        .mini-tag {
-            background: #2a2a2a;
-            color: #b0b0b0;
-            font-size: 9px;
-            padding: 1px 6px;
+        .badge-discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f44336;
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 6px;
             border-radius: 4px;
+            font-weight: bold;
         }
-
-        .stock-status {
-            font-size: 10px;
-            color: #9ca3af;
+        .tags {
+            font-size: 11px;
+            color: #888;
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ส่วนหัว: โปรไฟล์และแบนเนอร์ -->
-    <div class="header-container">
-        <!-- เฟซหลัก -->
-        <div class="profile-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="fb-card">
-                <div class="fb-icon">หลัก</div>
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Profile">
-                <div class="fb-name">ตา คนเก่า</div>
-            </a>
-        </div>
+    <!-- แบนเนอร์ประกาศด้านบน -->
+    <div class="notice">
+        ติดต่อสอบถามกดที่รูปหรือตัวสินค้าได้เลย!
+    </div>
 
-        <!-- แบนเนอร์ขวา -->
-        <div class="banner-box">
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่เดี่ยว">
-            </a>
-            <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="banner-item">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="ไก่คู่">
-            </a>
+    <!-- รายการสินค้าที่ 1: Haaland -->
+    <div class="item-card" onclick="alert('สนใจติดต่อสอบถามได้เลยครับ');">
+        <span class="badge-discount">-10%</span>
+        <img src="https://via.placeholder.com/90?text=Haaland" alt="Haaland" class="item-img">
+        <div class="item-info">
+            <div class="item-name">Erling Haaland</div>
+            <div><span class="old-price">60</span><span class="item-price">50 บาท</span></div>
+            <div class="tags">เดี่ยว | ⚡ 10% | ✨ มาใหม่</div>
+            <div class="item-stock">คงเหลือ: 3</div>
         </div>
     </div>
 
-    <!-- ข้อความแจ้งเตือน -->
-    <div class="notice-bar">ติดต่อสอบถามกดที่รูปหรือตัวสินค้าได้เลย!</div>
+    <!-- รายการสินค้าที่ 2: Harry Kane -->
+    <div class="item-card" onclick="alert('สนใจติดต่อสอบถามได้เลยครับ');">
+        <span class="badge-discount">-10%</span>
+        <img src="https://via.placeholder.com/90?text=Kane" alt="Harry Kane" class="item-img">
+        <div class="item-info">
+            <div class="item-name">Harry Kane</div>
+            <div><span class="old-price">45</span><span class="item-price">35 บาท</span></div>
+            <div class="tags">เดี่ยว | ⚡ 10% | ✨ มาใหม่</div>
+            <div class="item-stock">คงเหลือ: 5</div>
+        </div>
+    </div>
 
-    <!-- รายการสินค้า -->
-    <div class="product-list">
+    <!-- รายการสินค้าที่ 3: Rodri -->
+    <div class="item-card" onclick="alert('สนใจติดต่อสอบถามได้เลยครับ');">
+        <span class="badge-discount">-10%</span>
+        <img src="https://via.placeholder.com/90?text=Rodri" alt="Rodri" class="item-img">
+        <div class="item-info">
+            <div class="item-name">Rodri</div>
+            <div><span class="old-price">60</span><span class="item-price">50 บาท</span></div>
+            <div class="tags">เดี่ยว | ⚡ 10% | ✨ มาใหม่</div>
+            <div class="item-stock">คงเหลือ: 1</div>
+        </div>
+    </div>
 
-        <!-- สินค้าชิ้นที่ 1 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
-            <div class="discount-badge">-10%</div>
-            <div class="product-img-box">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Erling Haaland">
-            </div>
-            <div class="product-info">
-                <div>
-                    <div class="product-name">Erling Haaland</div>
-                    <div class="price-box">
-                        <span class="old-price">200</span>
-                        <span class="new-price">180 บาท</span>
-                    </div>
-                    <div class="tags-row">
-                        <span class="mini-tag">เดี่ยว</span>
-                        <span class="mini-tag">⚡ 10%</span>
-                        <span class="mini-tag">✨ มาใหม่</span>
-                    </div>
-                </div>
-                <div class="stock-status">คงเหลือ: 3</div>
-            </div>
-        </a>
+    <!-- รายการสินค้าที่ 4: Ferran Torres -->
+    <div class="item-card" onclick="alert('สนใจติดต่อสอบถามได้เลยครับ');">
+        <span class="badge-discount">-10%</span>
+        <img src="https://via.placeholder.com/90?text=Torres" alt="Ferran Torres" class="item-img">
+        <div class="item-info">
+            <div class="item-name">Ferran Torres</div>
+            <div><span class="old-price">30</span><span class="item-price">20 บาท</span></div>
+            <div class="tags">เดี่ยว | ⚡ 10% | ✨ มาใหม่</div>
+            <div class="item-stock">คงเหลือ: 1</div>
+        </div>
+    </div>
 
-        <!-- สินค้าชิ้นที่ 2 -->
-        <a href="https://www.facebook.com/share/1BnjZ4bRmH/" target="_blank" class="product-card">
-            <div class="discount-badge">-10%</div>
-            <div class="product-img-box">
-                <img src="https://i.ibb.co/RTtx4yh0/1785019351874.png" alt="Harry Kane">
-            </div>
-            <div class="product-info">
-                <div>
-                    <div class="product-name">Harry Kane</div>
-                    <div class="price-box">
-                        <span class="old-price">150</span>
-                        <span class="new-price">135 บาท</span>
-                    </div>
-                    <div class="tags-row">
-                        <span class="mini-tag">เดี่ยว</span>
-                        <span class="mini-tag">⚡ 10%</span>
-                        <span class="mini-tag">✨ มาใหม่</span>
-                    </div>
-                </div>
-                <div class="stock-status">คงเหลือ: 1</div>
-            </div>
-        </a>
-
-        <!-- ========================================================== -->
-        <!-- 📌 โค้ดต้นแบบสำหรับก๊อปปี้เพิ่มสินค้า "ทีละชิ้น" (วางต่อด้านล่างนี้ได้เลย) -->
-        <!-- ========================================================== -->
-        <a href="ใส่ลิงก์เฟซบุ๊คตรงนี้" target="_blank" class="product-card">
-            <div class="discount-badge">-10%</div>
-            <div class="product-img-box">
-                <img src="ใส่ลิงก์รูปภาพสินค้าตรงนี้" alt="ชื่อสินค้า">
-            </div>
-            <div class="product-info">
-                <div>
-                    <div class="product-name">ใส่ชื่อสินค้าตรงนี้</div>
-                    <div class="price-box">
-                        <span class="old-price">ราคาเก่า</span>
-                        <span class="new-price">ราคาใหม่ บาท</span>
-                    </div>
-                    <div class="tags-row">
-                        <span class="mini-tag">เดี่ยว</span>
-                        <span class="mini-tag">⚡ 10%</span>
-                        <span class="mini-tag">✨ มาใหม่</span>
-                    </div>
-                </div>
-                <div class="stock-status">คงเหลือ: จำนวน</div>
-            </div>
-        </a>
-
+    <!-- รายการสินค้าที่ 5: Gerard Piqué -->
+    <div class="item-card" onclick="alert('สนใจติดต่อสอบถามได้เลยครับ');">
+        <span class="badge-discount">-10%</span>
+        <img src="https://via.placeholder.com/90?text=Pique" alt="Gerard Piqué" class="item-img">
+        <div class="item-info">
+            <div class="item-name">Gerard Piqué</div>
+            <div><span class="old-price">40</span><span class="item-price">30 บาท</span></div>
+            <div class="tags">เดี่ยว | ⚡ 10% | ✨ มาใหม่</div>
+            <div class="item-stock">คงเหลือ: 1</div>
+        </div>
     </div>
 
 </body>
