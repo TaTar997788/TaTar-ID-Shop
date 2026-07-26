@@ -3,79 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สุ่มไอดี eFootball</title>
+    <title>ร้านค้าของฉัน - eFootball</title>
     <style>
-        body { background: #121212; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; }
-        .box { background: #1e1e1e; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; border: 1px solid #333; }
-        .credit { background: #2a2a2a; padding: 10px; border-radius: 5px; font-weight: bold; color: #4CAF50; margin-bottom: 15px; }
-        button { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        .btn-gacha { background: #2196F3; color: #fff; font-size: 16px; }
-        .btn-gacha:hover { background: #0b7dda; }
-        .btn-back { background: #555; color: #fff; }
-        .btn-back:hover { background: #444; }
-        #result { margin-top: 15px; font-weight: bold; color: #ff9800; }
+        body { 
+            background: #121212; 
+            color: #fff; 
+            font-family: sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0;
+        }
+        .container { 
+            background: #1e1e1e; 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            max-width: 450px; 
+            margin: 40px auto; 
+            border: 1px solid #333; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 { 
+            color: #ff9800; 
+            margin-bottom: 10px; 
+            font-size: 24px;
+        }
+        .bio { 
+            color: #aaa; 
+            font-size: 14px; 
+            margin-bottom: 25px; 
+            line-height: 1.5;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #fff;
+            margin: 20px 0 10px 0;
+            text-align: left;
+            border-left: 3px solid #ff9800;
+            padding-left: 8px;
+        }
+        .info-box {
+            background: #2a2a2a;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+        .btn { 
+            display: block; 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-decoration: none;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .btn-primary { 
+            background: #2196F3; 
+            color: #fff; 
+        }
+        .btn-primary:hover { 
+            background: #0b7dda; 
+        }
+        .btn-secondary { 
+            background: #333; 
+            color: #fff; 
+        }
+        .btn-secondary:hover { 
+            background: #444; 
+        }
     </style>
 </head>
 <body>
 
-    <div class="box">
-        <h2>⚽ สุ่มไอดี eFootball</h2>
-        
-        <!-- แสดงเครดิตคงเหลือ -->
-        <div class="credit">เครดิตคงเหลือ: <span id="creditDisplay">100</span> บาท</div>
-        
-        <p>ค่าสุ่มครั้งละ 50 บาท</p>
-        
-        <button class="btn-gacha" onclick="playGacha()">สุ่มไอดีเลย!</button>
-        <button class="btn-back" onclick="location.href='index.html'">กลับหน้าหลัก</button>
-        
-        <div id="result"></div>
+    <div class="container">
+        <h1>⚽ ร้านจำหน่ายไอดี eFootball</h1>
+        <p class="bio">ยินดีต้อนรับสู่ร้านของเรา จำหน่ายไอดีเกมราคาเป็นกันเอง ปลอดภัย ไวใจได้ 100%</p>
+
+        <div class="section-title">📌 รายละเอียดร้านค้า</div>
+        <div class="info-box">
+            • เปิดให้บริการทุกวัน ไม่มีวันหยุด<br>
+            • สนใจสินค้าชิ้นไหนสามารถติดต่อสอบถามได้ตลอดเวลา<br>
+            • ซื้อขายปลอดภัย ทางร้านดูแลหลังการขาย
+        </div>
+
+        <div class="section-title">📞 ช่องทางการติดต่อ</div>
+        <div class="info-box">
+            • เฟซบุ๊ก: (ใส่ชื่อเฟสของคุณที่นี่)<br>
+            • ไลน์: (ใส่ไอดีไลน์ของคุณที่นี่)
+        </div>
+
+        <!-- ปุ่มกดต่างๆ -->
+        <a href="topup.html" class="btn btn-primary">💳 เติมเงิน / แจ้งสลิป</a>
+        <a href="#" class="btn btn-secondary" onclick="alert('ยังไม่มีสินค้าในขณะนี้ครับ'); return false;">🛒 ดูสินค้าทั้งหมด</a>
     </div>
-
-    <script>
-        // กำหนดเครดิตเริ่มต้น 100 บาท (บันทึกไว้ในเครื่อง)
-        if (localStorage.getItem('myCredit') === null) {
-            localStorage.setItem('myCredit', '100');
-        }
-
-        // แสดงผลเครดิตปัจจุบัน
-        function updateCreditDisplay() {
-            let currentCredit = localStorage.getItem('myCredit');
-            document.getElementById('creditDisplay').innerText = currentCredit;
-        }
-        updateCreditDisplay();
-
-        // ฟังก์ชันสุ่มไอดี
-        function playGacha() {
-            let currentCredit = parseInt(localStorage.getItem('myCredit'));
-            let cost = 50; // ค่าสุ่มครั้งละ 50 บาท
-
-            if (currentCredit < cost) {
-                document.getElementById('result').style.color = "red";
-                document.getElementById('result').innerText = "❌ เครดิตไม่พอ กรุณาเติมเงินก่อน!";
-                return;
-            }
-
-            // หักเงิน
-            currentCredit -= cost;
-            localStorage.setItem('myCredit', currentCredit);
-            updateCreditDisplay();
-
-            // รายชื่อไอดีจำลองที่จะสุ่มได้
-            let items = [
-                "🎉 ยินดีด้วย! คุณได้ไอดี: Messi 105 (Epic)",
-                "🎉 ยินดีด้วย! คุณได้ไอดี: Neymar 104 (Show Time)",
-                "🎉 ยินดีด้วย! คุณได้ไอดี: Maradona 103 (Legend)",
-                "😢 เสียใจด้วย ได้เกลือ (ลองใหม่อีกครั้ง!)",
-                "😢 เสียใจด้วย ได้ตัวธรรมดา"
-            ];
-
-            let randomItem = items[Math.floor(Math.random() * items.length)];
-            
-            document.getElementById('result').style.color = "#ff9800";
-            document.getElementById('result').innerText = randomItem;
-        }
-    </script>
 
 </body>
 </html>
