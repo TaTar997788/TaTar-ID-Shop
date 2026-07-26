@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เติมเงิน - TaTar ID Shop</title>
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #121212; color: #fff; text-align: center; padding: 20px; }
+        .container { max-width: 400px; margin: 0 auto; background: #1e1e1e; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; box-sizing: border-box; }
+        input { background: #2d2d2d; color: #fff; font-size: 16px; }
+        button { background: #ff9800; color: #000; font-weight: bold; font-size: 16px; cursor: pointer; }
+        button:hover { background: #e68900; }
+        .back-btn { background: #555; color: #fff; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>เติมเงิน TrueMoney Wallet</h2>
+        <p>(ระบบซองของขวัญอั่งเปา)</p>
+        
+        <!-- ฟอร์มรับลิงก์ซองของขวัญ -->
+        <input type="text" id="voucherLink" placeholder="วางลิงก์ซองของขวัญ TrueMoney ที่นี่">
+        <button onclick="submitTopup()">ยืนยันการเติมเงิน</button>
+        
+        <p id="statusMessage" style="font-size: 14px; margin-top: 15px;"></p>
+
+        <button class="back-btn" onclick="location.href='index.html'">กลับหน้าหลัก</button>
+    </div>
+
+    <script>
+        function submitTopup() {
+            let link = document.getElementById('voucherLink').value.trim();
+            let status = document.getElementById('statusMessage');
+
+            if (!link.includes('truemoney.com')) {
+                status.style.color = '#ff5252';
+                status.innerText = 'กรุณากรอกลิงก์ซองของขวัญ TrueMoney ให้ถูกต้อง!';
+                return;
+            }
+
+            status.style.color = '#ff9800';
+            status.innerText = 'กำลังตรวจสอบรายการ...';
+
+            setTimeout(() => {
+                status.style.color = '#4CAF50';
+                status.innerText = 'เติมเงินสำเร็จ! เครดิตถูกเพิ่มเข้าไอดีแล้ว';
+                
+                let currentCredit = localStorage.getItem('userCredit') ? parseInt(localStorage.getItem('userCredit')) : 0;
+                currentCredit += 50; 
+                localStorage.setItem('userCredit', currentCredit);
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
