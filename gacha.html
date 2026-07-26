@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุ่มไอดี eFootball - TaTar ID Shop</title>
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #121212; color: #fff; text-align: center; padding: 20px; }
+        .container { max-width: 450px; margin: 0 auto; background: #1e1e1e; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .credit-box { background: #2d2d2d; padding: 10px; border-radius: 5px; margin-bottom: 20px; font-size: 18px; color: #4CAF50; }
+        button { width: 100%; padding: 15px; border-radius: 5px; border: none; background: #2196F3; color: #fff; font-weight: bold; font-size: 18px; cursor: pointer; }
+        button:hover { background: #0b7dda; }
+        .result-box { margin-top: 20px; padding: 15px; background: #2a2a2a; border-radius: 5px; border: 1px dashed #ff9800; display: none; }
+        .back-btn { background: #555; margin-top: 10px; font-size: 16px; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>สุ่มไอดี eFootball ⚽</h2>
+        <div class="credit-box">เครดิตคงเหลือ: <span id="displayCredit">0</span> บาท</div>
+        
+        <p>ค่าสุ่มครั้งละ <strong>50 บาท</strong></p>
+        <button onclick="randomAccount()">สุ่มไอดีเลย!</button>
+
+        <!-- กล่องแสดงผลลัพธ์ไอดีที่สุ่มได้ -->
+        <div id="resultBox" class="result-box">
+            <h3>🎉 ยินดีด้วย คุณได้รับ!</h3>
+            <p id="accountResult" style="color: #ffeb3b; font-size: 16px; word-break: break-all;"></p>
+        </div>
+
+        <button class="back-btn" onclick="location.href='index.html'">กลับหน้าหลัก</button>
+    </div>
+
+    <script>
+        function updateCreditDisplay() {
+            let credit = localStorage.getItem('userCredit') ? parseInt(localStorage.getItem('userCredit')) : 0;
+            document.getElementById('displayCredit').innerText = credit;
+        }
+        updateCreditDisplay();
+
+        let accounts = [
+            "User: tatar_fc_01 | Pass: pass1234 ( Haaland 105 )",
+            "User: tatar_fc_02 | Pass: pass5678 ( Messi Epic )",
+            "User: tatar_fc_03 | Pass: pass91011 ( Neymar ShowTime )"
+        ];
+
+        function randomAccount() {
+            let credit = localStorage.getItem('userCredit') ? parseInt(localStorage.getItem('userCredit')) : 0;
+            let cost = 50;
+
+            if (credit < cost) {
+                alert('เครดิตของคุณไม่พอ! กรุณาเติมเงินก่อนครับ');
+                location.href = 'topup.html';
+                return;
+            }
+
+            if (accounts.length === 0) {
+                alert('ไอดีหมดแล้วครับ! โปรดรอแอดมินเติมสต็อก');
+                return;
+            }
+
+            credit -= cost;
+            localStorage.setItem('userCredit', credit);
+            updateCreditDisplay();
+
+            let randomIndex = Math.floor(Math.random() * accounts.length);
+            let wonAccount = accounts[randomIndex];
+            
+            accounts.splice(randomIndex, 1);
+
+            document.getElementById('accountResult').innerText = wonAccount;
+            document.getElementById('resultBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
